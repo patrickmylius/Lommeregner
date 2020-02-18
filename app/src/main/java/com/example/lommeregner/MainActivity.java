@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     Lommeregner lommeregner = new Lommeregner();
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             double a = Double.parseDouble(doubleA.getText().toString());
             double b = Double.parseDouble(doubleB.getText().toString());
 
-            resultat.setText(Double.toString(lommeregner.add(a, b)));
+            resultat.setText(String.format(Locale.GERMAN, "%.2f",lommeregner.add(a, b)));
 
         } catch (Exception e) {
             resultat.setText("Illegal input, try again");
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             double a = Double.parseDouble(doubleA.getText().toString());
             double b = Double.parseDouble(doubleB.getText().toString());
 
-            resultat.setText(Double.toString(lommeregner.subtract(a, b)));
+            resultat.setText(String.format(Locale.GERMAN, "%.2f",lommeregner.subtract(a, b)));
 
         } catch (Exception e) {
             resultat.setText("Illegal input, try again");
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             double a = Double.parseDouble(doubleA.getText().toString());
             double b = Double.parseDouble(doubleB.getText().toString());
 
-            resultat.setText(Double.toString(lommeregner.multiply(a, b)));
+            resultat.setText(String.format(Locale.GERMAN, "%.2f",lommeregner.multiply(a, b)));
 
         } catch (Exception e) {
             resultat.setText("Illegal input, try again");
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             double a = Double.parseDouble(doubleA.getText().toString());
             double b = Double.parseDouble(doubleB.getText().toString());
 
-            resultat.setText(Double.toString(lommeregner.division(a, b)));
+            resultat.setText(String.format(Locale.GERMAN, "%.2f",lommeregner.division(a, b)));
 
         } catch (Exception e) {
             resultat.setText("Illegal input, try again");
